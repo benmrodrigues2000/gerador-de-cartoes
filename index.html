@@ -758,8 +758,6 @@ label.f-label,.f-label{
 }
 .v3d-controls{padding:16px 20px;display:flex;flex-direction:column;gap:14px}
 .v3d-actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
-.v3d-sliders{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px}
-@media (max-width:680px){.v3d-sliders{grid-template-columns:1fr}}
 .readout{
   font-family:var(--f-mono);font-size:10.5px;letter-spacing:.05em;color:var(--text-muted);
   background:rgba(9,13,30,.7);border:1px solid var(--panel-border);border-radius:99px;padding:5px 11px;
@@ -1062,16 +1060,16 @@ label.f-label,.f-label{
         <h3 class="form-section-title" data-i18n="sec_direct"></h3>
         <div class="form-group">
           <label class="f-label" for="f_email" data-i18n="fld_email"></label>
-          <input type="email" id="f_email" class="input-text" placeholder="nome@empresa.com" spellcheck="false">
+          <input type="email" id="f_email" class="input-text" data-i18n-ph="ph_email" spellcheck="false">
         </div>
         <div class="grid-2">
           <div class="form-group">
             <label class="f-label" for="f_phone" data-i18n="fld_phone"></label>
-            <input type="tel" id="f_phone" class="input-text" placeholder="+351 210 000 000">
+            <input type="tel" id="f_phone" class="input-text" data-i18n-ph="ph_phone">
           </div>
           <div class="form-group">
             <label class="f-label" for="f_mobile" data-i18n="fld_mobile"></label>
-            <input type="tel" id="f_mobile" class="input-text" placeholder="+351 900 000 000">
+            <input type="tel" id="f_mobile" class="input-text" data-i18n-ph="ph_mobile">
           </div>
         </div>
 
@@ -1079,7 +1077,7 @@ label.f-label,.f-label{
         <div class="grid-2">
           <div class="form-group">
             <label class="f-label" for="f_web" data-i18n="fld_web"></label>
-            <input type="text" id="f_web" class="input-text" placeholder="empresa.com" spellcheck="false">
+            <input type="text" id="f_web" class="input-text" data-i18n-ph="ph_web" spellcheck="false">
           </div>
           <div class="form-group">
             <label class="f-label" for="f_qr_payload" data-i18n="fld_qr"></label>
@@ -1402,17 +1400,6 @@ label.f-label,.f-label{
           <button type="button" class="btn btn-ghost btn-xs" id="back3dBtn" data-i18n="btn_face_back"></button>
           <button type="button" class="btn btn-ghost btn-xs" id="reset3dBtn" data-i18n="btn_reset_view"></button>
           <button type="button" class="btn btn-ghost btn-xs" id="flat3dBtn" data-i18n="btn_flat"></button>
-        </div>
-        <div class="v3d-sliders">
-          <div class="range-row"><label for="s3d_ry" data-i18n="sl_ry"></label><input type="range" id="s3d_ry" min="-180" max="180" step="1" value="26"><output id="o3d_ry">26°</output></div>
-          <div class="range-row"><label for="s3d_rx" data-i18n="sl_rx"></label><input type="range" id="s3d_rx" min="-80" max="80" step="1" value="-14"><output id="o3d_rx">-14°</output></div>
-          <div class="range-row"><label for="s3d_zoom" data-i18n="sl_zoom"></label><input type="range" id="s3d_zoom" min="60" max="260" step="2" value="155"><output id="o3d_zoom">1.55×</output></div>
-          <div class="range-row"><label for="s3d_persp" data-i18n="sl_persp"></label><input type="range" id="s3d_persp" min="600" max="3000" step="50" value="1500"><output id="o3d_persp">1500px</output></div>
-          <div class="range-row"><label for="s3d_glare" data-i18n="sl_glare"></label><input type="range" id="s3d_glare" min="0" max="100" step="5" value="35"><output id="o3d_glare">35%</output></div>
-          <div class="range-row"><label for="s3d_thick" data-i18n="sl_thick"></label><input type="range" id="s3d_thick" min="0" max="34" step="1" value="11"><output id="o3d_thick">0.40 mm</output></div>
-          <div class="range-row"><label for="s3d_tx" data-i18n="sl_tx"></label><input type="range" id="s3d_tx" min="-260" max="260" step="2" value="0"><output id="o3d_tx">0px</output></div>
-          <div class="range-row"><label for="s3d_ty" data-i18n="sl_ty"></label><input type="range" id="s3d_ty" min="-180" max="180" step="2" value="0"><output id="o3d_ty">0px</output></div>
-          <div class="range-row"><label for="s3d_shadow" data-i18n="sl_shadow"></label><input type="range" id="s3d_shadow" min="0" max="100" step="5" value="85"><output id="o3d_shadow">85%</output></div>
         </div>
         <span class="hint" data-i18n="hint_3d"></span>
       </div>
@@ -1958,11 +1945,11 @@ pt:{
  brand_sub:'Gerador de Cartões de Visita Corporativos',stat_theme:'Tema',stat_fmt:'Formato',
  btn_3d:'Ver em 3D',btn_pdf:'Impressão / PDF',editor:'Editor do Cartão',
  tab_id:'Cartão',tab_net:'Contactos',tab_style:'Estilo',tab_print:'Impressão',
- sec_person:'Quem aparece no cartão',fld_name:'Nome completo',ph_name:'ex. Ruben Rodrigues',
- fld_role:'Cargo',ph_role:'ex. Diretor Comercial',fld_dept:'Departamento',ph_dept:'ex. Vendas & Parcerias',
- sec_company:'Empresa',fld_company:'Nome da empresa',ph_company:'ex. Vertex Cloud, Lda.',
- fld_monogram:'Monograma',ph_monogram:'ex. VX',fld_tagline:'Slogan / proposta',ph_tagline:'ex. Infraestrutura que não adormece',
- fld_est:'Fundação / edição',ph_est:'ex. EST. 2014',fld_legal:'Menção legal',ph_legal:'ex. NIF 509 884 221 · C.R.C. Lisboa',
+ sec_person:'Quem aparece no cartão',fld_name:'Nome completo',ph_name:'Escreve o teu nome completo',
+ fld_role:'Cargo',ph_role:'Indica o teu cargo ou função',fld_dept:'Departamento',ph_dept:'Indica o teu departamento ou equipa',
+ sec_company:'Empresa',fld_company:'Nome da empresa',ph_company:'Escreve o nome da empresa',
+ fld_monogram:'Monograma',ph_monogram:'Iniciais (até 4 letras)',fld_tagline:'Slogan / proposta',ph_tagline:'Descreve a empresa numa frase curta',
+ fld_est:'Fundação / edição',ph_est:'Ano de fundação (ex. EST. 2014)',fld_legal:'Menção legal',ph_legal:'NIF ou dados legais da empresa',
  sec_photo:'Fotografia',fld_photo:'Retrato profissional',btn_upload:'Carregar',btn_gray:'P&B',btn_remove:'Remover',
  rng_zoom:'Zoom',rng_x:'Pos. X',rng_y:'Pos. Y',fld_frame:'Moldura da foto',
  frame_band:'Banda lateral (sangrada)',frame_round:'Retrato circular',frame_none:'Sem foto (tipográfico)',
@@ -1971,8 +1958,8 @@ pt:{
  sec_web:'Website & QR Code',fld_web:'Website (único)',fld_qr:'Conteúdo do QR',
  qr_web:'Abrir o website',qr_vcard:'Guardar contacto (vCard)',qr_phone:'Ligar agora',qr_email:'Enviar email',
  hint_qr:'O QR é gerado localmente (vetorial) e vive no verso, sempre no mesmo módulo.',
- sec_office:'Morada do escritório',fld_street:'Rua e número',ph_street:'ex. Av. da Liberdade 245, 4.º',
- fld_city:'Código postal e localidade',ph_city:'ex. 1250-143 Lisboa',fld_country:'País',ph_country:'ex. Portugal',
+ sec_office:'Morada do escritório',fld_street:'Rua e número',ph_street:'Rua, número e andar do escritório',
+ fld_city:'Código postal e localidade',ph_city:'Código postal e localidade',fld_country:'País',ph_country:'País onde a empresa está sediada',
  sec_social:'Redes sociais (até 3)',hint_social:'Deixa uma linha vazia e ela desaparece do cartão sem desalinhar nada.',
  sec_front_lines:'O que mostrar na frente',
  sec_themes:'Temas corporativos',sec_hex:'Cores principais em HEX',btn_auto_ink:'Tinta automática',btn_reset_colors:'Repor tema',btn_random:'Paleta aleatória',
@@ -2000,7 +1987,6 @@ pt:{
  sec_3d:'Vista 3D · arrasta para mover o cartão',lbl_rot:'Rotação',btn_expand:'Ecrã completo',
  drag_hint:'Arrasta para orbitar',orbit:'ÓRBITA',scroll_hint:'Roda para aproximar · Shift+arrasta para mover',
  btn_spin:'Auto-rotação',btn_face_front:'Frente',btn_face_back:'Verso',btn_reset_view:'Repôr vista',btn_flat:'Vista de topo',
- sl_ry:'Rotação Y',sl_rx:'Inclinação X',sl_zoom:'Escala',sl_persp:'Perspetiva',sl_glare:'Reflexo',sl_thick:'Espessura',sl_shadow:'Sombra',sl_tx:'Mover X',sl_ty:'Mover Y',
  hint_3d:'A vista 3D é só apresentação: o PDF usa sempre o miolo exato ao tamanho de corte.',
  sec_turn:'Clicar para virar',turn_badge:'Frente',hint_turn:'Um clique roda 180°; 90° mostra a espessura do cartão.',
  btn_turn_auto:'Virar sozinho',btn_turn_90:'Ver 90°',
@@ -2033,17 +2019,23 @@ pt:{
  c_web_bad:'Falta o website para gerar o QR.',
  c_mail_ok:'Email bem formado.',c_mail_bad:'Email sem @ — verifica.',
  c_social_ok:'Redes sociais dentro do limite (3).',
- unit_mm:'mm',unit_pages:'páginas',unit_page:'página'
+ unit_mm:'mm',unit_pages:'páginas',unit_page:'página',
+ ph_email:'Email profissional (nome@empresa.com)',
+ ph_phone:'Telefone com indicativo do país',
+ ph_mobile:'Telemóvel com indicativo do país',
+ ph_web:'Endereço do website (empresa.com)',
+ ph_social:'URL do perfil ou @utilizador',
+ ph_hex:'Cor HEX (ex. #A78BFA)',
 },
 en:{
  brand_sub:'Corporate Business Card Generator',stat_theme:'Theme',stat_fmt:'Size',
  btn_3d:'View in 3D',btn_pdf:'Print / PDF',editor:'Card Editor',
  tab_id:'Card',tab_net:'Contacts',tab_style:'Style',tab_print:'Print',
- sec_person:'Who is on the card',fld_name:'Full name',ph_name:'e.g. Alex Chen',
- fld_role:'Job title',ph_role:'e.g. Chief Revenue Officer',fld_dept:'Department',ph_dept:'e.g. Enterprise Sales',
- sec_company:'Company',fld_company:'Company name',ph_company:'e.g. Vertex Cloud Inc.',
- fld_monogram:'Monogram',ph_monogram:'e.g. VX',fld_tagline:'Tagline / value line',ph_tagline:'e.g. Infrastructure that never sleeps',
- fld_est:'Founded / edition',ph_est:'e.g. EST. 2014',fld_legal:'Legal line',ph_legal:'e.g. EIN 84-1234567 · Delaware',
+ sec_person:'Who is on the card',fld_name:'Full name',ph_name:'Enter your full name',
+ fld_role:'Job title',ph_role:'Enter your job title or role',fld_dept:'Department',ph_dept:'Enter your department or team',
+ sec_company:'Company',fld_company:'Company name',ph_company:'Enter your company name',
+ fld_monogram:'Monogram',ph_monogram:'Initials (up to 4 letters)',fld_tagline:'Tagline / value line',ph_tagline:'Describe your business in a short line',
+ fld_est:'Founded / edition',ph_est:'Founding year (e.g. EST. 2014)',fld_legal:'Legal line',ph_legal:'Company tax ID or legal details',
  sec_photo:'Portrait',fld_photo:'Professional headshot',btn_upload:'Upload',btn_gray:'B&W',btn_remove:'Remove',
  rng_zoom:'Zoom',rng_x:'Pos X',rng_y:'Pos Y',fld_frame:'Photo frame',
  frame_band:'Full-bleed side band',frame_round:'Circular portrait',frame_none:'No photo (type driven)',
@@ -2052,8 +2044,8 @@ en:{
  sec_web:'Website & QR code',fld_web:'Website (single)',fld_qr:'QR payload',
  qr_web:'Open the website',qr_vcard:'Save contact (vCard)',qr_phone:'Call now',qr_email:'Send email',
  hint_qr:'The QR is generated locally as vector art and always sits in the same module on the back.',
- sec_office:'Office address',fld_street:'Street and number',ph_street:'e.g. 535 Mission St, 14th floor',
- fld_city:'Postal code and city',ph_city:'e.g. San Francisco, CA 94105',fld_country:'Country',ph_country:'e.g. United States',
+ sec_office:'Office address',fld_street:'Street and number',ph_street:'Office street, number and floor',
+ fld_city:'Postal code and city',ph_city:'Postal code and city',fld_country:'Country',ph_country:'Country where your business is based',
  sec_social:'Social channels (up to 3)',hint_social:'Leave a line empty and it drops out of the card without shifting anything.',
  sec_front_lines:'What the front shows',
  sec_themes:'Corporate themes',sec_hex:'Brand colours in HEX',btn_auto_ink:'Auto ink',btn_reset_colors:'Reset theme',btn_random:'Random palette',
@@ -2081,7 +2073,6 @@ en:{
  sec_3d:'3D view · drag to move the card',lbl_rot:'Rotation',btn_expand:'Fullscreen',
  drag_hint:'Drag to orbit',orbit:'ORBIT',scroll_hint:'Scroll to zoom · Shift-drag to move',
  btn_spin:'Auto spin',btn_face_front:'Front',btn_face_back:'Back',btn_reset_view:'Reset view',btn_flat:'Top view',
- sl_ry:'Rotation Y',sl_rx:'Tilt X',sl_zoom:'Scale',sl_persp:'Perspective',sl_glare:'Glare',sl_thick:'Thickness',sl_shadow:'Shadow',sl_tx:'Move X',sl_ty:'Move Y',
  hint_3d:'The 3D view is presentation only: the PDF always uses the exact trim artwork.',
  sec_turn:'Click to turn',turn_badge:'Front',hint_turn:'One click turns 180°; 90° shows the card edge.',
  btn_turn_auto:'Auto turn',btn_turn_90:'Show 90°',
@@ -2114,7 +2105,13 @@ en:{
  c_web_bad:'Website missing, so no QR can be built.',
  c_mail_ok:'Email well formed.',c_mail_bad:'Email has no @ — check it.',
  c_social_ok:'Social channels within the 3 limit.',
- unit_mm:'mm',unit_pages:'pages',unit_page:'page'
+ unit_mm:'mm',unit_pages:'pages',unit_page:'page',
+ ph_email:'Work email (name@company.com)',
+ ph_phone:'Phone number with country code',
+ ph_mobile:'Mobile number with country code',
+ ph_web:'Website address (company.com)',
+ ph_social:'Profile URL or @handle',
+ ph_hex:'HEX colour (e.g. #A78BFA)',
 }};
 function t(k){var l=S.lang;return (I18N[l]&&I18N[l][k])||I18N.pt[k]||k;}
 
@@ -2191,12 +2188,12 @@ var S={
  colors:{primary:'',secondary:'',canvas:'',paper:'',accent:''},
  fonts:{display:'grotesk',body:'inter'},nameCase:'none',weight:600,track:-0.01,ltrack:0.16,
  radius:2.2,band:31,
- photo:'Retrato.jpg',photoZoom:1,photoX:50,photoY:42,gray:false,
+ photo:null,photoZoom:1,photoX:50,photoY:42,gray:false,
  lines:{email:true,phone:true,mobile:false,web:true},showSoc:true,qr:'website',
  print:{preset:'home',bleed:3,faces:'both',mirror:true,duplex:true,gray:false,marks:true,qty:10},
  v3:{rx:-14,ry:26,zoom:1.55,persp:1500,glare:.35,thick:.4,shadow:.85,tx:0,ty:0,spin:false,flat:false},
  turn:0,autoTurn:false,
- data:{photo:'Retrato.jpg',name:'',role:'',dept:'',company:'',mono:'',tag:'',est:'',legal:'',email:'',phone:'',mobile:'',web:'',
+ data:{photo:null,name:'',role:'',dept:'',company:'',mono:'',tag:'',est:'',legal:'',email:'',phone:'',mobile:'',web:'',
    street:'',city:'',country:'',socials:[{p:'linkedin',v:''},{p:'instagram',v:''},{p:'behance',v:''}]}
 };
 var FIELDS=['name','role','dept','company','mono','tag','est','legal','email','phone','mobile','web','street','city','country'];
@@ -2288,7 +2285,7 @@ function handleLabel(p,v){
 function absURL(v){var s=cleanURL(v);return s?((/^[a-z0-9.-]+\.[a-z]{2,}(\/|$)/i.test(s)?'https://'+s:s)):''}
 function nameLines(str){
   var parts=String(str||'').trim().split(/\s+/).filter(Boolean);
-  if(!parts.length)return['Nome da Empresa'];
+  if(!parts.length)return [''];
   if(parts.length===1)return [parts[0]];
   if(parts.length===2)return [parts[0],parts[1]];
   var mid=Math.ceil(parts.length/2);
@@ -2297,8 +2294,8 @@ function nameLines(str){
 function monogram(){
   var m=String(S.data.mono||'').trim();
   if(m)return m.slice(0,4).toUpperCase();
-  var base=S.data.company||S.data.name||'CS';
-  return base.replace(/[^\p{L}\p{N} ]/gu,'').trim().split(/\s+/).slice(0,2).map(function(w){return w[0]||''}).join('').toUpperCase()||'CS';
+  var base=S.data.company||S.data.name||'';
+  return base.replace(/[^\p{L}\p{N} ]/gu,'').trim().split(/\s+/).slice(0,2).map(function(w){return w[0]||''}).join('').toUpperCase();
 }
 function socials(){return (S.data.socials||[]).filter(function(s){return s&&s.v&&String(s.v).trim()}).slice(0,3)}
 function frontLines(){
@@ -2322,9 +2319,9 @@ function qrPayload(){
       'URL:'+(absURL(d.web)||''),'NOTE:'+(d.tag||'')+((socialsList.length)?' | '+socialsList.map(function(s){return (PL[s.p]||PL.web).l+': '+s.v}).join(' · '):''),
       'END:VCARD'].join('\r\n');
   }
-  if(S.qr==='email')return 'mailto:'+(d.email||'');
-  if(S.qr==='phone')return 'tel:'+String(d.phone||d.mobile||'').replace(/[^\d+]/g,'');
-  return absURL(d.web)||('mailto:'+(d.email||''));
+  if(S.qr==='email')return d.email?'mailto:'+d.email:'';
+  if(S.qr==='phone')return d.phone||d.mobile?'tel:'+String(d.phone||d.mobile).replace(/[^\d+]/g,''):'';
+  return absURL(d.web)||(d.email?'mailto:'+d.email:'');
 }
 function qrSVG(){
   var txt=qrPayload();if(!txt)return '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--cd-body);font-weight:700;letter-spacing:.08em;font-size:calc(var(--u)*1.8);color:#7A7F8C;text-align:center;padding:6%">ADD<br>WEBSITE</div>';
@@ -2525,7 +2522,7 @@ function buildHexGrid(){
     return '<div class="hex-field" data-hf="'+f.k+'"><div class="hf-top">'+
       '<span class="hf-name">'+(S.lang==='pt'?f.lab_pt:f.lab_en)+'</span>'+
       '<button type="button" class="hf-reset" data-hex-reset="'+f.k+'" title="'+(S.lang==='pt'?'Usar o valor do tema':'Use theme value')+'">auto</button></div>'+
-      '<div class="hex-wrap"><input type="color" data-hex-pick="'+f.k+'" aria-label="'+f.k+'"><input type="text" class="hex-text" data-hex="'+f.k+'" maxlength="7" spellcheck="false" autocomplete="off"></div>'+
+      '<div class="hex-wrap"><input type="color" data-hex-pick="'+f.k+'" aria-label="'+f.k+'"><input type="text" class="hex-text" data-hex="'+f.k+'" placeholder="'+t('ph_hex')+'" title="'+t('ph_hex')+'" aria-label="'+(S.lang==='pt'?f.lab_pt:f.lab_en)+' HEX" maxlength="7" spellcheck="false" autocomplete="off"></div>'+
       '<div class="hex-meta"><span data-hex-ratio="'+f.k+'">—</span><span class="pill-ok" data-hex-badge="'+f.k+'">—</span></div></div>';
   }).join('');
   syncHexInputs();
@@ -2537,7 +2534,7 @@ function syncHexInputs(){
     f.classList.toggle('dirty',!!raw);
     var picker=f.querySelector('[data-hex-pick]'),txt=f.querySelector('[data-hex]');
     if(picker)picker.value=val;
-    if(txt&&document.activeElement!==txt)txt.value=val;
+    if(txt&&document.activeElement!==txt)txt.value=raw;
     var against=(k==='canvas'||k==='paper')?(lumOf(val)>0.46?'#0C1122':'#F2F4FA'):c.canvas;
     var ratio=contrast(val,against),st=wcag(ratio);
     var meta=f.querySelector('[data-hex-ratio]'),pill=f.querySelector('[data-hex-badge]');
@@ -2562,7 +2559,7 @@ function buildSocialEditors(){
       '<span class="switch" style="width:34px;height:19px"><input type="checkbox" data-soc-on="'+i+'" '+(s.v?'checked':'')+' aria-label="on"><i></i></span></div>'+
       '<div class="social-body"><div class="grid-2">'+
       '<select class="input-select" data-soc-p="'+i+'" aria-label="platform">'+plat.map(function(p){return '<option value="'+p+'"'+(s.p===p?' selected':'')+'>'+esc(names(p))+'</option>'}).join('')+'</select>'+
-      '<input type="text" class="input-text" data-soc-v="'+i+'" value="'+esc(s.v||'')+'" placeholder="'+(S.lang==='pt'?'url ou @utilizador':'url or @handle')+'" spellcheck="false">'+
+      '<input type="text" class="input-text" data-soc-v="'+i+'" value="'+esc(s.v||'')+'" placeholder="'+t('ph_social')+'" aria-label="'+t('ph_social')+'" spellcheck="false">'+
       '</div></div>'+
       '<div class="social-preview">'+(s.v?socChipHTML(s.p)+'<span>'+esc(handleLabel(s.p,s.v))+'</span>':'<span>'+(S.lang==='pt'?'vazio · não aparece no cartão':'empty · hidden on card')+'</span>')+'</div>'+
       '</div>';
@@ -2785,17 +2782,11 @@ function apply3D(){
   });
   byId('rotReadout').textContent='Y '+(v.flat?0:Math.round(((v.ry%360)+360)%360>180?((v.ry%360)+360)%360-360:v.ry))+'° · X '+Math.round(v.rx)+'°';
 }
-function sync3dSliders(){
-  var v=S.v3;
-  byId('s3d_ry').value=Math.round(v.ry);byId('o3d_ry').textContent=Math.round(v.ry)+'°';
-  byId('s3d_rx').value=Math.round(v.rx);byId('o3d_rx').textContent=Math.round(v.rx)+'°';
-  byId('s3d_zoom').value=Math.round(v.zoom*100);byId('o3d_zoom').textContent=v.zoom.toFixed(2)+'×';
-  byId('s3d_persp').value=v.persp;byId('o3d_persp').textContent=v.persp+'px';
-  byId('s3d_glare').value=Math.round(v.glare*100);byId('o3d_glare').textContent=Math.round(v.glare*100)+'%';
-  byId('s3d_thick').value=Math.round(v.thick*100);byId('o3d_thick').textContent=v.thick.toFixed(2)+' '+t('unit_mm');
-  byId('s3d_shadow').value=Math.round(v.shadow*100);byId('o3d_shadow').textContent=Math.round(v.shadow*100)+'%';
-  byId('s3d_tx').value=Math.round(v.tx);byId('o3d_tx').textContent=Math.round(v.tx)+'px';
-  byId('s3d_ty').value=Math.round(v.ty);byId('o3d_ty').textContent=Math.round(v.ty)+'px';
+function turn3D(side){
+  turn(side);
+  S.v3.ry=S.side==='back'?180:0;
+  S.v3.flat=false;
+  apply3D();
 }
 function bind3D(stageId,cardId){
   var st=byId(stageId),cd=byId(cardId);if(!st||!cd)return;
@@ -2812,17 +2803,17 @@ function bind3D(stageId,cardId){
     if(shiftDown||e.shiftKey||e.button===2){S.v3.tx+=dx;S.v3.ty+=dy}
     else{S.v3.ry+=dx*0.45;S.v3.rx=Math.max(-85,Math.min(85,S.v3.rx-dy*0.35))}
     vt=dx*0.45;vp=-dy*0.35;
-    sync3dSliders();apply3D();
+    apply3D();
   });
   var end=function(e){
     if(!drag)return;drag=false;
-    if(moved<6&&Date.now()-t0<420){turn();}
+    if(moved<6&&Date.now()-t0<420){turn3D();}
     else if(!shiftDown){
       if(raf)cancelAnimationFrame(raf);
       var decay=function(){
         if(drag||Math.abs(vt)<0.06){raf=null;return}
         S.v3.ry+=vt;S.v3.rx=Math.max(-85,Math.min(85,S.v3.rx+vp));
-        vt*=0.93;vp*=0.9;sync3dSliders();apply3D();raf=requestAnimationFrame(decay);
+        vt*=0.93;vp*=0.9;apply3D();raf=requestAnimationFrame(decay);
       };
       raf=requestAnimationFrame(decay);
     }
@@ -2831,7 +2822,7 @@ function bind3D(stageId,cardId){
   st.addEventListener('wheel',function(e){
     e.preventDefault();
     S.v3.zoom=Math.max(.5,Math.min(2.7,S.v3.zoom-e.deltaY*0.0011));
-    sync3dSliders();apply3D();
+    apply3D();
   },{passive:false});
   st.addEventListener('contextmenu',function(e){e.preventDefault()});
 }
@@ -3231,21 +3222,12 @@ function init(){
     S.texture=b.dataset.setTex;qa('[data-set-tex]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});queueSync();
   })});
   /* 3D */
-  byId('s3d_ry').addEventListener('input',function(e){S.v3.ry=+e.target.value;S.v3.flat=false;sync3dSliders();apply3D()});
-  byId('s3d_rx').addEventListener('input',function(e){S.v3.rx=+e.target.value;sync3dSliders();apply3D()});
-  byId('s3d_zoom').addEventListener('input',function(e){S.v3.zoom=(+e.target.value)/100;sync3dSliders();apply3D()});
-  byId('s3d_persp').addEventListener('input',function(e){S.v3.persp=+e.target.value;sync3dSliders();apply3D()});
-  byId('s3d_glare').addEventListener('input',function(e){S.v3.glare=(+e.target.value)/100;sync3dSliders();apply3D()});
-  byId('s3d_thick').addEventListener('input',function(e){S.v3.thick=(+e.target.value)/100;sync3dSliders();apply3D()});
-  byId('s3d_shadow').addEventListener('input',function(e){S.v3.shadow=(+e.target.value)/100;sync3dSliders();apply3D()});
-  byId('s3d_tx').addEventListener('input',function(e){S.v3.tx=+e.target.value;sync3dSliders();apply3D()});
-  byId('s3d_ty').addEventListener('input',function(e){S.v3.ty=+e.target.value;sync3dSliders();apply3D()});
   byId('spin3dBtn').addEventListener('click',function(){setSpin()});
   byId('modalSpinBtn').addEventListener('click',function(){setSpin()});
-  byId('turn3dBtn').addEventListener('click',function(){turn()});
-  byId('front3dBtn').addEventListener('click',function(){turn('front')});
-  byId('back3dBtn').addEventListener('click',function(){turn('back')});
-  byId('reset3dBtn').addEventListener('click',function(){S.v3={rx:-14,ry:26,zoom:1.55,persp:1500,glare:.35,thick:.4,shadow:.85,tx:0,ty:0,spin:false,flat:false};sync3dSliders();apply3D()});
+  byId('turn3dBtn').addEventListener('click',function(){turn3D()});
+  byId('front3dBtn').addEventListener('click',function(){turn3D('front')});
+  byId('back3dBtn').addEventListener('click',function(){turn3D('back')});
+  byId('reset3dBtn').addEventListener('click',function(){S.v3={rx:-14,ry:26,zoom:1.55,persp:1500,glare:.35,thick:.4,shadow:.85,tx:0,ty:0,spin:false,flat:false};setSpin(false);apply3D()});
   byId('flat3dBtn').addEventListener('click',function(){S.v3.flat=!S.v3.flat;S.v3.spin=false;byId('flat3dBtn').setAttribute('aria-pressed',String(S.v3.flat));apply3D()});
   bind3D('stage3d','card3d');bind3D('stage3dModal','card3dModal');
   /* turn */
@@ -3264,14 +3246,14 @@ function init(){
     byId('popoutModal').classList.add('active');byId('popoutModal').setAttribute('aria-hidden','false');
     var st=byId('stage3dModal');
     var fitW=(window.innerWidth*0.92)/mm2px(FORMATS[S.fmt].w),fitH=(window.innerHeight*0.52)/mm2px(FORMATS[S.fmt].h);
-    S.v3.zoom=Math.max(.6,Math.min(fitW,fitH,2.4));sync3dSliders();apply3D();
+    S.v3.zoom=Math.max(.6,Math.min(fitW,fitH,2.4));apply3D();
   };
   var closeModal=function(){byId('popoutModal').classList.remove('active');byId('popoutModal').setAttribute('aria-hidden','true')};
   byId('openPopoutBtn').addEventListener('click',openModal);
   byId('expand3dBtn').addEventListener('click',openModal);
   byId('closePopoutBtn').addEventListener('click',closeModal);
   byId('popoutModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
-  byId('modalTurnBtn').addEventListener('click',function(){turn()});
+  byId('modalTurnBtn').addEventListener('click',function(){turn3D()});
   byId('modalPdfBtn').addEventListener('click',function(){closeModal();doPrint()});
   /* print tab */
   qa('.preset').forEach(function(b){b.addEventListener('click',function(){
@@ -3311,10 +3293,10 @@ function init(){
     if(k==='f'){e.preventDefault();turn()}
     if(k==='p'){e.preventDefault();doPrint()}
     if(k==='3'){e.preventDefault();byId('openPopoutBtn').click()}
-    if(k==='arrowleft'){S.v3.ry-=6;sync3dSliders();apply3D()}
-    if(k==='arrowright'){S.v3.ry+=6;sync3dSliders();apply3D()}
-    if(k==='arrowup'){S.v3.rx=Math.max(-85,S.v3.rx-5);sync3dSliders();apply3D()}
-    if(k==='arrowdown'){S.v3.rx=Math.min(85,S.v3.rx+5);sync3dSliders();apply3D()}
+    if(k==='arrowleft'){S.v3.ry-=6;apply3D()}
+    if(k==='arrowright'){S.v3.ry+=6;apply3D()}
+    if(k==='arrowup'){S.v3.rx=Math.max(-85,S.v3.rx-5);apply3D()}
+    if(k==='arrowdown'){S.v3.rx=Math.min(85,S.v3.rx+5);apply3D()}
     if(e.key==='Escape'){byId('popoutModal').classList.remove('active')}
   });
   document.addEventListener('keyup',function(e){if(e.key==='Shift')shiftDown=false});
@@ -3328,18 +3310,12 @@ function init(){
   buildFmtSeg();buildThemeGrid();buildHexGrid();buildFontSelects();buildSocialEditors();buildLineToggles();buildPresetSelect();
   byId('photoState').textContent=S.lang==='pt'?'Sem imagem: o monograma mantém o bloco alinhado.':'No image: the monogram keeps the slot aligned.';
   var restored=loadLocal();
-  if(!restored){loadPresetSilent(PRESETS[1])}
+  setLang(S.lang);
   applyLoadedControls();
   setPhoto(S.photo?S.photo:null);
-  sync3dSliders();apply3D();setMode(S.mode);turn(S.side);
+  apply3D();setMode(S.mode);turn(S.side);
   syncSliderOuts();updatePageSize();syncAll();
   if(restored)toast(t('toast_loaded'));
-}
-function loadPresetSilent(p){
-  var c=p[S.lang]||p.en;
-  Object.keys(c).forEach(function(k){if(k!=='socials')S.data[k]=c[k]});
-  S.data.socials=[0,1,2].map(function(i){return c.socials[i]?{p:c.socials[i].p,v:c.socials[i].v}:{p:'linkedin',v:''}});
-  S.theme=p.theme;S.fonts.display=p.font;S.fill=p.fill;S.frame=p.frame;
 }
 function applyLoadedControls(){
   Object.keys(FIELD_IDS).forEach(function(k){var e=byId(FIELD_IDS[k]);if(e)e.value=S.data[k]||''});
