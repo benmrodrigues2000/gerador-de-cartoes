@@ -1,0 +1,60 @@
+/* These rules style the actual card, in every preview and in print. */
+.card-art { position: absolute; width: calc(var(--u)*52); height: calc(var(--u)*52); right: calc(var(--u)*-16); bottom: calc(var(--v)*4); color: var(--c-primary); opacity: .48; pointer-events: none; }
+.card-art svg { width: 100%; height: 100%; overflow: visible; }
+[data-layout="classic"] .card-art { display: none; }
+[data-layout]:not([data-layout="classic"]) .face-front .fx-wash,
+[data-layout]:not([data-layout="classic"]) .face-back .fx-wash { opacity: 0; }
+[data-layout]:not([data-layout="classic"]) .f-eyebrow { font-size: calc(var(--u)*2.2); letter-spacing: .2em; font-weight: 500; }
+[data-layout]:not([data-layout="classic"]) .f-eyebrow i { width: calc(var(--u)*1.7); height: calc(var(--u)*1.7); border-radius: 0; transform: rotate(45deg); }
+[data-layout]:not([data-layout="classic"]) .f-bar { display: none; }
+[data-layout]:not([data-layout="classic"]) .f-role { font-size: calc(var(--u)*2.6*var(--bs,1)*var(--ws,1)); margin-top: calc(var(--v)*4); font-weight: 400; }
+[data-layout]:not([data-layout="classic"]) .f-name { font-size: calc(var(--u)*10*var(--bs,1)*var(--w-name,1)); line-height: .96; }
+[data-layout]:not([data-layout="classic"]) .f-lines { gap: calc(var(--v)*2); }
+[data-layout]:not([data-layout="classic"]) .f-line .ic { display: none; }
+[data-layout]:not([data-layout="classic"]) .f-line .v { font-size: calc(var(--u)*2.15*var(--bs,1)*var(--ws,1)); font-weight: 400; color: var(--front-ink-soft); }
+[data-layout]:not([data-layout="classic"])[data-variant="minimal"] .f-id,
+[data-layout]:not([data-layout="classic"])[data-variant="minimal"] .f-foot { padding-right: calc(var(--u)*22); }
+[data-layout]:not([data-layout="classic"])[data-variant="band"] .card-art,
+[data-layout]:not([data-layout="classic"])[data-variant="open"] .card-art { opacity: .15; }
+[data-layout]:not([data-layout="classic"]) .b-accent { display: none; }
+[data-layout]:not([data-layout="classic"]) .b-watermark { opacity: .02; }
+[data-layout]:not([data-layout="classic"]) .b-head { border-bottom: 0; padding-bottom: calc(var(--v)*3); }
+[data-layout]:not([data-layout="classic"]) .b-mark { background: transparent; border-color: var(--c-paper-rule); color: var(--c-paper-ink); border-radius: 0; font-weight: 500; }
+[data-layout]:not([data-layout="classic"]) .b-head-r { display: none; }
+[data-layout]:not([data-layout="classic"]) .b-co { font-size: calc(var(--u)*4.5*var(--bs,1)*var(--ws,1)); letter-spacing: -.04em; text-transform: none; }
+[data-layout]:not([data-layout="classic"]) .b-tag { font-weight: 400; font-size: calc(var(--u)*2.4*var(--bs,1)*var(--ws,1)); }
+[data-layout]:not([data-layout="classic"]) .b-row .k { letter-spacing: .08em; color: var(--c-paper-ink-soft); font-weight: 500; font-size: calc(var(--u)*1.65*var(--bs,1)); }
+[data-layout]:not([data-layout="classic"]) .b-row .val { font-size: calc(var(--u)*2.15*var(--bs,1)*var(--ws,1)); border-color: var(--c-paper-rule); padding-top: calc(var(--v)*1.9); }
+[data-layout]:not([data-layout="classic"]) .b-qr { width: calc(var(--u)*24); border: none; padding-left: calc(var(--u)*4); justify-content: center; }
+[data-layout]:not([data-layout="classic"]) .b-qr-cap { font-size: calc(var(--u)*1.55*var(--bs,1)*var(--ws,1)); letter-spacing: .1em; font-weight: 400; }
+[data-layout]:not([data-layout="classic"]) .b-qr-url { color: var(--c-paper-ink); font-size: calc(var(--u)*1.95*var(--bs,1)*var(--ws,1)); font-weight: 400; }
+[data-layout]:not([data-layout="classic"]) .qr-frame { box-shadow: none; border-radius: 0; }
+[data-layout]:not([data-layout="classic"]) .b-foot { letter-spacing: .1em; font-size: calc(var(--u)*1.7*var(--bs,1)*var(--ws,1)); }
+[data-layout="atelier"] .f-name { color: var(--c-secondary); }
+[data-layout="atelier"][data-fill="light"] .f-name { color: var(--c-paper-ink); }
+[data-layout="atelier"][data-fill="primary"] .f-name { color: var(--c-on-primary); }
+[data-layout="editorial"] .f-name { font-size: calc(var(--u)*12*var(--bs,1)*var(--w-name,1)); line-height: .88; }
+[data-layout="editorial"] .f-eyebrow i { display: none; }
+[data-layout="editorial"] .f-eyebrow { letter-spacing: .3em; }
+[data-layout="editorial"] .card-art { bottom: calc(var(--v)*17); right: calc(var(--u)*7); width: calc(var(--u)*24); height: calc(var(--v)*54); border: .15mm solid currentColor; border-radius: 50% 50% 0 0; opacity: .4; }
+[data-layout="editorial"] .card-art svg { display: none; }
+[data-layout="editorial"] .card-art::after { content: ""; position: absolute; inset: calc(var(--u)*2); border: .15mm solid currentColor; border-radius: 50% 50% 0 0; }
+[data-layout="bold"] .f-name { color: var(--c-primary); text-transform: uppercase; font-size: calc(var(--u)*10.3*var(--bs,1)*var(--w-name,1)); }
+[data-layout="bold"] .card-art { width: calc(var(--u)*36); height: calc(var(--u)*36); right: calc(var(--u)*-9); bottom: calc(var(--v)*12); border-radius: 50%; background: var(--c-primary); opacity: 1; }
+[data-layout="bold"] .card-art svg { display: none; }
+[data-layout="bold"] .f-eyebrow { letter-spacing: .1em; }
+[data-layout="bold"] .f-eyebrow i { display: none; }
+[data-layout="minimal"] .card-art { display: none; }
+[data-layout="minimal"][data-variant="minimal"] .f-id,
+[data-layout="minimal"][data-variant="minimal"] .f-foot { padding-right: 0; }
+[data-layout="minimal"] .f-name { font-size: calc(var(--u)*7.3*var(--bs,1)*var(--w-name,1)); }
+[data-layout="minimal"] .f-name .ln { display: inline; white-space: normal; }
+[data-layout="minimal"] .f-name .ln + .ln::before { content: " "; }
+[data-layout="minimal"] .f-bar { display: block; width: calc(var(--u)*14); height: .2mm; background: var(--front-ink); margin-top: calc(var(--v)*5); margin-bottom: 0; }
+[data-layout="minimal"] .f-eyebrow i { display: none; }
+[data-layout="minimal"] .f-eyebrow { letter-spacing: .28em; }
+.f-name .ln { font-size: calc(1em * var(--ws,1)); }
+.qr-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font: 500 calc(var(--u)*1.65)/1.4 var(--cd-body); color: #596b51; padding: 8%; text-align: center; }
+
+[data-layout]:not([data-layout="classic"]) .b-foot { color: var(--c-paper-ink-soft); }
+[data-layout]:not([data-layout="classic"]) .b-rows { justify-content: center; gap: calc(var(--v)*5); }
